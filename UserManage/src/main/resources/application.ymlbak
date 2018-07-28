@@ -1,0 +1,26 @@
+
+server:
+  port: 8089
+spring:
+  application:
+    name: user
+  datasource:
+    url: jdbc:mysql://localhost/mmall
+    password: 123
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    name: test
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+     defaultZone: http://127.0.0.1:6869/eureka,http://127.0.0.1:6868/eureka
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+mybatis:
+  type-aliases-package: com.test.UserManage.dao
+  mapper-locations: classpath:com.test.UserManage.dao/*.xml
+pagehelper:
+  helper-dialect: mysql
